@@ -183,7 +183,7 @@
   var RECIPIENT = "artgiverny@gmail.com";
   // Paste the free Web3Forms access key for artgiverny@gmail.com (https://web3forms.com).
   // Until a real key is set, the form gracefully opens the visitor's mail app instead.
-  var WEB3FORMS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY";
+  var WEB3FORMS_KEY = "a819444a-0ea9-45f2-9cc7-5e2f8b91732f";
 
   function mailtoFallback(name, email, interest, message) {
     var subject = t("form.subject", "Art Giverny inquiry") + " — " + interest;
