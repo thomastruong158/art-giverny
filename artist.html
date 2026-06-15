@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artist — Art Giverny</title>
+  <meta name="description" content="A painter of Giverny — biography and works, presented by Art Giverny, the gallery of Patrick Bertrand." />
+  <meta name="theme-color" content="#2F4032" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#apMain" data-i18n="a11y.skip">Skip to the collection</a>
+
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a class="wordmark" href="index.html" aria-label="Art Giverny — home">
+        <span class="wordmark-art">Art</span><span class="wordmark-sep"></span><span class="wordmark-giverny">Giverny</span>
+      </a>
+      <nav class="nav-primary" aria-label="Primary">
+        <ul>
+          <li><a href="index.html#collection" data-i18n="nav.collection">Collection</a></li>
+          <li><a href="index.html#artists" data-i18n="nav.artists">Artists</a></li>
+          <li><a href="index.html#lineage" data-i18n="nav.lineage">Lineage</a></li>
+          <li><a href="index.html#expertise" data-i18n="nav.expertise">Expertise</a></li>
+          <li><a href="index.html#press" data-i18n="nav.press">Press</a></li>
+        </ul>
+      </nav>
+      <div class="header-right">
+        <div class="lang-toggle" role="group" aria-label="Language / Langue">
+          <button class="lang-btn is-active" data-lang="en" aria-pressed="true">EN</button>
+          <span class="lang-sep" aria-hidden="true">/</span>
+          <button class="lang-btn" data-lang="fr" aria-pressed="false">FR</button>
+        </div>
+        <a class="btn btn-ghost header-cta" href="index.html#contact" data-i18n="nav.contact">Contact</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav aria-label="Mobile">
+      <ul>
+        <li><a href="index.html#collection" data-i18n="nav.collection">Collection</a></li>
+        <li><a href="index.html#artists" data-i18n="nav.artists">Artists</a></li>
+        <li><a href="index.html#lineage" data-i18n="nav.lineage">Lineage</a></li>
+        <li><a href="index.html#expertise" data-i18n="nav.expertise">Expertise</a></li>
+        <li><a href="index.html#press" data-i18n="nav.press">Press</a></li>
+        <li><a href="index.html#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="lang-toggle lang-toggle--mobile" role="group" aria-label="Language / Langue">
+        <button class="lang-btn is-active" data-lang="en" aria-pressed="true">English</button>
+        <span class="lang-sep" aria-hidden="true">·</span>
+        <button class="lang-btn" data-lang="fr" aria-pressed="false">Français</button>
+      </div>
+      <a class="btn btn-solid" href="index.html#contact" data-i18n="nav.inquire">Make an Inquiry</a>
+    </nav>
+  </div>
+
+  <main class="ap" id="apMain" aria-live="polite"><!-- rendered by artist-page.js --></main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <a class="wordmark wordmark--footer" href="index.html" aria-label="Art Giverny — home">
+          <span class="wordmark-art">Art</span><span class="wordmark-sep"></span><span class="wordmark-giverny">Giverny</span>
+        </a>
+        <p class="footer-tag" data-i18n-html="footer.tag">Impressionist masters of Giverny.<br />Acquisitions, private sales &amp; scholarship.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <p class="footer-nav-head" data-i18n="footer.explore">Explore</p>
+        <ul>
+          <li><a href="index.html#collection" data-i18n="nav.collection">Collection</a></li>
+          <li><a href="index.html#artists" data-i18n="nav.artists">Artists</a></li>
+          <li><a href="index.html#lineage" data-i18n="nav.lineage">Lineage</a></li>
+          <li><a href="index.html#catalogue" data-i18n="nav.catalogue">Catalogue Raisonné</a></li>
+          <li><a href="index.html#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-nav" aria-label="Connect">
+        <p class="footer-nav-head" data-i18n="footer.connect">Connect</p>
+        <ul>
+          <li><a href="mailto:info@artgiverny.com">info@artgiverny.com</a></li>
+          <li><a href="https://www.instagram.com/artgiverny" target="_blank" rel="noopener">Instagram</a></li>
+          <li><span data-i18n="footer.location">Giverny · Normandy</span></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="wrap footer-base">
+      <p>© <span id="year">2026</span> Art Giverny · Patrick Bertrand. <span data-i18n="footer.rights">All rights reserved.</span></p>
+      <p class="footer-fine" data-i18n-html="footer.fine">Archival photographs © GivernyART Archive. Claude Monet, <em>Water Lilies</em> (1906), shown for historical reference (public domain).</p>
+    </div>
+  </footer>
+
+  <a class="to-top" id="toTop" href="#top" aria-label="Back to top">↑</a>
+
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/artist-page.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

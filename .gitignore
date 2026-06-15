@@ -1,0 +1,6 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Full-resolution source originals — not needed for the live site
+assets/img/raw/
