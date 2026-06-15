@@ -42,8 +42,8 @@ assets/
 
 ## Things to personalise
 
-1. **Contact email** — replace the placeholder `info@artgiverny.com` in `assets/js/main.js`
-   (`RECIPIENT`) and in the Contact / Footer of `index.html` + `artist.html`.
+1. **Contact email** — set to `artgiverny@gmail.com` (in `assets/js/main.js` `RECIPIENT` and the
+   Contact / Footer of `index.html` + `artist.html`). Change it there if it ever moves.
 2. **Working form** — the inquiry form opens the visitor's email client (no backend). For inline
    submission, point the `<form>` at [Formspree](https://formspree.io) / [Web3Forms](https://web3forms.com).
 3. **Robinson, *Hôtel Baudy*** carries the gallery's own watermark — swap a clean scan into

@@ -180,7 +180,7 @@
   /* ---------- Inquiry form (mailto, no backend) ---------- */
   var form = document.getElementById("inquiryForm");
   var note = document.getElementById("formNote");
-  var RECIPIENT = "info@artgiverny.com"; // ← replace with the gallery's real address
+  var RECIPIENT = "artgiverny@gmail.com"; // gallery contact address
 
   if (form) {
     form.addEventListener("submit", function (e) {
