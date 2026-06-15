@@ -177,14 +177,27 @@
     }
   });
 
-  /* ---------- Inquiry form (mailto, no backend) ---------- */
+  /* ---------- Inquiry form (Web3Forms → artgiverny@gmail.com; mailto fallback) ---------- */
   var form = document.getElementById("inquiryForm");
   var note = document.getElementById("formNote");
-  var RECIPIENT = "artgiverny@gmail.com"; // gallery contact address
+  var RECIPIENT = "artgiverny@gmail.com";
+  // Paste the free Web3Forms access key for artgiverny@gmail.com (https://web3forms.com).
+  // Until a real key is set, the form gracefully opens the visitor's mail app instead.
+  var WEB3FORMS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY";
+
+  function mailtoFallback(name, email, interest, message) {
+    var subject = t("form.subject", "Art Giverny inquiry") + " — " + interest;
+    var body = "Name: " + name + "\nEmail: " + email + "\nInterest: " + interest + "\n\n" + (message || "—") + "\n";
+    note.textContent = t("form.sending", "Opening your email to complete the inquiry…");
+    window.location.href = "mailto:" + RECIPIENT +
+      "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  }
 
   if (form) {
+    var submitBtn = form.querySelector('button[type="submit"]');
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+      if (form.botcheck && form.botcheck.checked) return; // honeypot: silently drop bots
       var name = form.name.value.trim();
       var email = form.email.value.trim();
       var interest = form.interest.value;
@@ -196,11 +209,36 @@
         return;
       }
       note.classList.remove("error");
-      var subject = t("form.subject", "Art Giverny inquiry") + " — " + interest;
-      var body = "Name: " + name + "\nEmail: " + email + "\nInterest: " + interest + "\n\n" + (message || "—") + "\n";
-      note.textContent = t("form.sending", "Opening your email to complete the inquiry…");
-      window.location.href = "mailto:" + RECIPIENT +
-        "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+
+      var keyReady = WEB3FORMS_KEY && WEB3FORMS_KEY.indexOf("WEB3FORMS") === -1 && WEB3FORMS_KEY.length > 10;
+      if (!keyReady || !window.fetch) { mailtoFallback(name, email, interest, message); return; }
+
+      if (submitBtn) submitBtn.disabled = true;
+      note.textContent = t("form.send", "Sending…");
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: t("form.subject", "Art Giverny inquiry") + " — " + interest,
+          from_name: name,
+          name: name, email: email, replyto: email,
+          interest: interest, message: message || "—", botcheck: ""
+        })
+      }).then(function (r) { return r.json(); }).then(function (data) {
+        if (submitBtn) submitBtn.disabled = false;
+        if (data && data.success) {
+          form.reset();
+          note.textContent = t("form.success", "Thank you — your inquiry has been sent. We will be in touch shortly.");
+        } else {
+          note.textContent = t("form.fail", "Sorry, something went wrong. Please email us directly at artgiverny@gmail.com.");
+          note.classList.add("error");
+        }
+      }).catch(function () {
+        if (submitBtn) submitBtn.disabled = false;
+        note.textContent = t("form.fail", "Sorry, something went wrong. Please email us directly at artgiverny@gmail.com.");
+        note.classList.add("error");
+      });
     });
   }
 

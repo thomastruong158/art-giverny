@@ -134,6 +134,9 @@
     "form.message": "Message",
     "form.submit": "Envoyer la demande",
     "form.sending": "Ouverture de votre messagerie pour finaliser la demande…",
+    "form.send": "Envoi en cours…",
+    "form.success": "Merci — votre demande a bien été envoyée. Nous vous répondrons sous peu.",
+    "form.fail": "Une erreur est survenue. Écrivez-nous directement à artgiverny@gmail.com.",
     "form.err": "Veuillez saisir votre nom et une adresse e-mail valide.",
     "form.subject": "Demande Art Giverny",
 
@@ -148,6 +151,9 @@
   // English values used only by scripts (DOM elements supply their own EN)
   var EN_JS = {
     "form.sending": "Opening your email to complete the inquiry…",
+    "form.send": "Sending…",
+    "form.success": "Thank you — your inquiry has been sent. We will be in touch shortly.",
+    "form.fail": "Sorry, something went wrong. Please email us directly at artgiverny@gmail.com.",
     "form.err": "Please enter your name and a valid email address.",
     "form.subject": "Art Giverny inquiry"
   };
